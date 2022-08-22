@@ -65,8 +65,8 @@ function setup(){
                sin(rotY), 0, cos(rotY),0,
               0,0,0,1
       ); // rot Y
-     applyMatrix(cos(t),sin(t),0,0,
-                 -sin(t),  cos(t),0,0,
+     applyMatrix(cos(w1 * t),sin(w1 * t),0,0,
+                 -sin(w1 * t),  cos(w1 * t),0,0,
                  0,0 ,1 ,0,  
               0,0,0,1
       );// rot Z
@@ -110,8 +110,8 @@ function setup(){
                -sin(rotY), 0, cos(rotY),0,
               0,0,0,1
       ); // rot Y
-     applyMatrix(cos(t),sin(t),0,0,
-                 -sin(t),  cos(t),0,0,
+     applyMatrix(cos(w2 * t),sin(w2 * t),0,0,
+                 -sin(w2 * t),  cos(w2 * t),0,0,
                  0,0 ,1 ,0,  
               0,0,0,1
       );// rot Z
@@ -158,8 +158,8 @@ function setup(){
               0,0,0,1
       ); // rot Y
     
-     applyMatrix(cos(t),sin(t),0,0,
-                 -sin(t),  cos(t),0,0,
+     applyMatrix(cos(w1 * t),sin(w1 * t),0,0,
+                 -sin(w1 * t),  cos(w1 * t),0,0,
                  0,0 ,1 ,0,  
               0,0,0,1
       );// rot Z
