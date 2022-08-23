@@ -31,11 +31,9 @@ function draw(){
   const rotY = -atan(1/6);
   const w1 = PI/6; //velocidade ang em AB e DE
   const w2 = PI/2; //vel ang em BD
-  const v1 = 250 * PI/3;
-  const v2 = 50 * PI;
-  //const r1 = 500; //raio AB e DE
-  //const r2 = 100; // raio BD
-  const t = millis() / 1000;
+  const r1 = 500; //raio AB e DE
+  const r2 = 100; // raio BD
+  let t = millis() / 1000;
   
   /*
   //circulo que passa pelo arco AB
@@ -48,7 +46,7 @@ function draw(){
   circle(0,0,1000)
   pop()
   */
-
+if(t % 8 <= 3){
   // rotacaoAB
    push();
   applyMatrix(
@@ -67,8 +65,8 @@ function draw(){
              sin(rotY), 0, cos(rotY),0,
             0,0,0,1
     ); // rot Y
-   applyMatrix(cos(w1*t),sin(w1*t),0,0,
-               -sin(w1*t),  cos(w1*t),0,0,
+   applyMatrix(cos(w1 * t),sin(w1 * t),0,0,
+               -sin(w1 * t),  cos(w1 * t),0,0,
                0,0 ,1 ,0,  
             0,0,0,1
     );// rot Z
@@ -81,7 +79,7 @@ function draw(){
     );
   sphere(20)
   pop();
-  
+  } else if(t%8 >= 3 && t%8 < 5) {
   /*
   //circulo que passa pelo arco BD
   push()
@@ -112,8 +110,8 @@ function draw(){
              -sin(rotY), 0, cos(rotY),0,
             0,0,0,1
     ); // rot Y
-   applyMatrix(cos(w2*t),sin(w2*t),0,0,
-               -sin(w2*t),  cos(w2*t),0,0,
+   applyMatrix(cos(w2 * t),sin(w2 * t),0,0,
+               -sin(w2 * t),  cos(w2 * t),0,0,
                0,0 ,1 ,0,  
             0,0,0,1
     );// rot Z
@@ -128,7 +126,7 @@ function draw(){
     );
   sphere(20)
   pop();
-  
+  }else if (t%8 >= 5){
   /*
    // circulo que passa pelo arco DE
   push()
@@ -160,8 +158,8 @@ function draw(){
             0,0,0,1
     ); // rot Y
   
-   applyMatrix(cos(w1*t),sin(w1*t),0,0,
-               -sin(w1*t),  cos(w1*t),0,0,
+   applyMatrix(cos(w1 * t),sin(w1 * t),0,0,
+               -sin(w1 * t),  cos(w1 * t),0,0,
                0,0 ,1 ,0,  
             0,0,0,1
     );// rot Z
@@ -176,5 +174,6 @@ function draw(){
     );
   sphere(20)
   pop();
+  }
   
 }
